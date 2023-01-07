@@ -1,11 +1,14 @@
-import store from "../../app/store";
 import { AnimatePresence, motion } from "framer-motion";
+import backgroundImage from "../../resources/backgroundone.jpeg";
+import { useSelector } from "react-redux";
 
 const Confirmation = ({ setCurrentPage, currentPage }: any) => {
-  const dataCollectState = store.getState();
+  // const dataCollectState = store.getState();
 
-  const handlClick = () => {
-    console.log(dataCollectState);
+  const data: any = useSelector((state: any) => state.dataCollect);
+
+  const handleClick = () => {
+    console.log(data);
   };
 
   return (
@@ -18,35 +21,36 @@ const Confirmation = ({ setCurrentPage, currentPage }: any) => {
         className='pageDesign'>
         <div className='leftSide'>
           <div className='topHalf'>
-            <h1>CONFIRMATION</h1>
+            <h1>SO FAR SO GOOD?</h1>
             <p className='paraText'>
-              This information is used to calculate your daily calorie needs and
-              to track your progress over time.
-              <br /> Is this information correct? If so hit the submit button!
-            </p>
-            <br />
-            <p>
-              <b>Age:</b> {dataCollectState.dataCollect.age}
+              Please take a moment to double-check that the personal data you
+              have entered is correct. It is important that this information is
+              accurate in order for us to tailor your fitness and diet plan to
+              your specific needs. Once you have verified that the data is
+              correct, you can proceed by hitting the submit button.
             </p>
             <p>
-              <b>Gender:</b>{" "}
-              {dataCollectState.dataCollect.gender.charAt(0).toUpperCase() +
-                dataCollectState.dataCollect.gender.slice(1)}
+              <span style={{ fontWeight: "600" }}>Age:</span> {data.age}
             </p>
             <p>
-              <b>Current Weight:</b>{" "}
-              {dataCollectState.dataCollect.currentWeight}
-              {dataCollectState.dataCollect.weightMeasurement}
+              <span style={{ fontWeight: "600" }}>Gender:</span>{" "}
+              {data.gender.charAt(0).toUpperCase() + data.gender.slice(1)}
             </p>
-            {dataCollectState.dataCollect.desiredWeight && (
+            <p>
+              <span style={{ fontWeight: "600" }}>Current Weight:</span>{" "}
+              {data.currentWeight}
+              {data.weightMeasurement}
+            </p>
+            {data.desiredWeight && (
               <p>
-                <b>Desired Weight:</b>{" "}
-                {dataCollectState.dataCollect.desiredWeight}
-                {dataCollectState.dataCollect.weightMeasurement}
+                <span style={{ fontWeight: "600" }}>Desired Weight:</span>{" "}
+                {data.desiredWeight}
+                {data.weightMeasurement}
               </p>
-            )}{" "}
+            )}
             <p>
-              <b>You wish too:</b> {dataCollectState.dataCollect.pathChoice}
+              <span style={{ fontWeight: "600" }}>You want to:</span>{" "}
+              {data.pathChoice}
             </p>
           </div>
           <div className='buttonGroup'>
@@ -55,13 +59,18 @@ const Confirmation = ({ setCurrentPage, currentPage }: any) => {
               onClick={() => setCurrentPage(currentPage - 1)}>
               Back
             </button>
-            <button className='Button' onClick={handlClick}>
+            <button className='Button' onClick={handleClick}>
               Submit
             </button>
           </div>
         </div>
-
-        <div className='rightSide'></div>
+        <div className='rightSide'>
+          <img
+            className='rightSideImage'
+            src={backgroundImage}
+            alt='background'
+          />
+        </div>
       </motion.div>
     </AnimatePresence>
   );
