@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import {
   setCurrentWeightData,
-  setDesiredWeightData,
   setWeightMeasurement,
+  setUserHeight,
 } from "../../features/slice";
 import { useDispatch } from "react-redux";
 import "../../App.css";
@@ -12,7 +12,8 @@ import backgroundImage from "../../resources/backgroundtwo.jpeg";
 const Weight = ({ setCurrentPage, currentPage }: any) => {
   const [measurement, setMeasurement] = useState("kg");
   const [currentWeight, setCurrentWeight] = useState<string | number>("");
-  const [desiredWeight, setDesiredWeight] = useState<string | number>("");
+  const [height, setHeight] = useState("");
+
   const [weightErrror, setWeightError] = useState(false);
 
   const dispatch = useDispatch();
@@ -29,15 +30,9 @@ const Weight = ({ setCurrentPage, currentPage }: any) => {
       setWeightError(true);
       return;
     }
-    if (
-      (desiredWeight && desiredWeight < weightRange.lower) ||
-      desiredWeight > weightRange.upper
-    ) {
-      setWeightError(true);
-      return;
-    }
+
     dispatch(setCurrentWeightData(currentWeight));
-    dispatch(setDesiredWeightData(desiredWeight));
+    dispatch(setUserHeight(height));
     dispatch(setWeightMeasurement(measurement));
     setCurrentPage(currentPage + 1);
   };
@@ -47,6 +42,10 @@ const Weight = ({ setCurrentPage, currentPage }: any) => {
       setWeightError(false);
     }
   }, [currentWeight]);
+
+  function handleHeight(event: any) {
+    setHeight(event.target.value);
+  }
 
   return (
     <AnimatePresence>
@@ -61,30 +60,35 @@ const Weight = ({ setCurrentPage, currentPage }: any) => {
             <h1>Your Weight, Your Goals!</h1>
             <p className='paraText'>
               In order to help you achieve your fitness goals, we ask for your
-              current weight and your target weight. If you don't know your
-              current or desired weight just put a reasonable estimate & if
-              you're not sure about what weight you wish to reach, you can leave
-              that blank!
+              current weight and your height. If you don't know your exact
+              weight or height just put a reasonable estimate!
             </p>
             <div className='weightInputContainer'>
               <input
                 className='weightInput'
-                type='text'
+                type='number'
                 placeholder='Current Weight'
                 value={currentWeight}
                 onChange={(e) => setCurrentWeight(e.target.value)}></input>
-              <input
-                className='weightInput'
-                type='text'
-                placeholder='Desired Weight'
-                value={desiredWeight}
-                onChange={(e) => setDesiredWeight(e.target.value)}></input>
               <div className='select-dropdown' style={{ width: "4rem" }}>
                 <select
                   value={measurement}
                   onChange={(e) => setMeasurement(e.target.value)}>
                   <option value='kg'>kg</option>
                   <option value='lbs'>lbs</option>
+                </select>
+              </div>
+              <div className='select-dropdown' style={{ width: "6rem" }}>
+                <select value={height} onChange={handleHeight}>
+                  <option value=''>Height</option>
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <option key={i} value={`5ft ${i}in`}>{`5ft ${i}in`}</option>
+                  ))}
+                  {Array.from({ length: 9 }, (_, i) => (
+                    <option
+                      key={i + 7}
+                      value={`6ft ${i}in`}>{`6ft ${i}in`}</option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -99,8 +103,12 @@ const Weight = ({ setCurrentPage, currentPage }: any) => {
               Back
             </button>
             <button
-              style={!currentWeight ? { opacity: "40%" } : { opacity: "100%" }}
-              disabled={!currentWeight}
+              style={
+                !currentWeight || !height
+                  ? { opacity: "40%" }
+                  : { opacity: "100%" }
+              }
+              disabled={!currentWeight || !height}
               className='Button'
               onClick={weightSubmitData}>
               Next

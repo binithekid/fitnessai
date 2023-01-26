@@ -1,0 +1,13 @@
+.nutrionalPreferencesForm {
+  display: flex;
+  gap: 13px;
+  flex-direction: column;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.selectPlan {
+  font-weight: 300;
+  margin-top: 20px;
+}

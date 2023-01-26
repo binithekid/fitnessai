@@ -5,8 +5,15 @@ const initialState = {
   age: "",
   gender: "",
   currentWeight: "",
-  desiredWeight: "",
   weightMeasurement: "kg",
+  howActive: "",
+  dietaryPreferences: "",
+  dailyProteinIntake: "",
+  dailyCalorieIntake: "",
+  selectedPlan: "",
+  selectedMeal: "",
+  selectedCuisine: "",
+  height: "",
 };
 
 const dataCollectSlice = createSlice({
@@ -25,11 +32,32 @@ const dataCollectSlice = createSlice({
     setCurrentWeightData(state, action) {
       state.currentWeight = action.payload;
     },
-    setDesiredWeightData(state, action) {
-      state.desiredWeight = action.payload;
-    },
     setWeightMeasurement(state, action) {
       state.weightMeasurement = action.payload;
+    },
+    setHowActive(state, action) {
+      state.howActive = action.payload;
+    },
+    setDietaryPreferences(state, action) {
+      state.dietaryPreferences = action.payload;
+    },
+    setDailyProteinIntake(state, action) {
+      state.dailyProteinIntake = action.payload;
+    },
+    setDailyCalorieIntake(state, action) {
+      state.dailyCalorieIntake = action.payload;
+    },
+    setSelectedPlan(state, action) {
+      state.selectedPlan = action.payload;
+    },
+    setSelectedMeal(state, action) {
+      state.selectedMeal = action.payload;
+    },
+    setSelectedCuisine(state, action) {
+      state.selectedCuisine = action.payload;
+    },
+    setUserHeight(state, action) {
+      state.height = action.payload;
     },
   },
 });
@@ -39,7 +67,14 @@ export const {
   setAgeData,
   setGenderData,
   setCurrentWeightData,
-  setDesiredWeightData,
   setWeightMeasurement,
+  setHowActive,
+  setDietaryPreferences,
+  setDailyProteinIntake,
+  setDailyCalorieIntake,
+  setSelectedPlan,
+  setSelectedMeal,
+  setSelectedCuisine,
+  setUserHeight,
 } = dataCollectSlice.actions;
 export default dataCollectSlice.reducer;

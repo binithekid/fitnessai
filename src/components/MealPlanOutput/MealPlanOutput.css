@@ -1,0 +1,21 @@
+.LoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dataContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.MealPlanContainer {
+  margin-top: 100px;
+  padding: 20px;
+}

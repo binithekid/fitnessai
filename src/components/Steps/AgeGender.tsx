@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../App.css";
 import { useDispatch } from "react-redux";
-import { setAgeData, setGenderData } from "../../features/slice";
+import { setAgeData, setGenderData, setHowActive } from "../../features/slice";
 import { AnimatePresence, motion } from "framer-motion";
 import backgroundImage from "../../resources/backgroundthree.jpeg";
 
@@ -9,6 +9,7 @@ const AgeGender = ({ currentPage, setCurrentPage }: any) => {
   const [selectedGender, setSelectedGender] = useState("");
   const [age, setAge] = useState<string | number>("");
   const [ageError, setAgeError] = useState(false);
+  const [active, howActiveAreYou] = useState("");
 
   const dispatch = useDispatch();
 
@@ -19,6 +20,7 @@ const AgeGender = ({ currentPage, setCurrentPage }: any) => {
     }
     dispatch(setAgeData(age));
     dispatch(setGenderData(selectedGender));
+    dispatch(setHowActive(active));
     setCurrentPage(currentPage + 1);
   };
 
@@ -38,7 +40,7 @@ const AgeGender = ({ currentPage, setCurrentPage }: any) => {
         className='pageDesign'>
         <div className='leftSide'>
           <div className='topHalf'>
-            <h1>YOUR AGE & GENDER</h1>
+            <h1>Personal Details</h1>
             <p className='paraText'>
               In order to provide the most personalized and effective fitness
               advice, we ask for your age and gender. This information allows us
@@ -59,9 +61,35 @@ const AgeGender = ({ currentPage, setCurrentPage }: any) => {
                 className='ageInput'
                 typeof='number'
                 placeholder='Enter age'
-                type='text'
+                type='number'
                 value={age}
-                onChange={(e) => setAge(e.target.value)}></input>
+                onChange={(e) => setAge(e.target.value)}
+              />
+
+              <div className='select-dropdown' style={{ width: "12rem" }}>
+                <select
+                  value={active}
+                  onChange={(e) => howActiveAreYou(e.target.value)}>
+                  <option value=''>How active are you</option>
+                  <option value='Not Active'>
+                    Sedentary (little or no exercise)
+                  </option>
+                  <option value='Lightly Active'>
+                    Lightly active (light exercise or sports 1-3 days/week)
+                  </option>
+                  <option value='Moderately Active'>
+                    Moderately active (moderate exercise or sports 3-5
+                    days/week){" "}
+                  </option>
+                  <option value='Very Active'>
+                    Very active (moderate exercise or sports 3-5 days/week){" "}
+                  </option>
+                  <option value='Extra Active'>
+                    Extra active (very hard exercise or sports and a physical
+                    job or training twice a day)
+                  </option>
+                </select>
+              </div>
             </div>
             {ageError && (
               <p className='invalidInput'>Please enter a valid age</p>
@@ -75,11 +103,11 @@ const AgeGender = ({ currentPage, setCurrentPage }: any) => {
             </button>
             <button
               style={
-                !selectedGender || !age || ageError
+                !selectedGender || !age || ageError || !active
                   ? { opacity: "40%" }
                   : { opacity: "100%" }
               }
-              disabled={!selectedGender || !age || ageError}
+              disabled={!selectedGender || !age || ageError || !active}
               className='Button'
               onClick={handlClick}>
               Next

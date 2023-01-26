@@ -28,9 +28,9 @@ const Path = ({ setCurrentPage, currentPage }: any) => {
             <p className='paraText'>
               We are here to help you achieve your health and fitness goals.
               Before we get started, we'd like to know what you hope to
-              accomplish with your workouts. Are you looking to get fitter, lose
-              weight, or gain muscle? Please let us know so we can help you
-              create a customized plan that's right for you.
+              accomplish with your workouts. Are you looking to lose weight, or
+              gain muscle? Please let us know so we can create a customized plan
+              that's right for you.
             </p>
 
             <div className='select-dropdown'>
@@ -40,8 +40,7 @@ const Path = ({ setCurrentPage, currentPage }: any) => {
                 onChange={(e) => setSelectPath(e.target.value)}>
                 <option value=''>Select one</option>
                 <option value='Lose Weight'>Lose Weight</option>
-                <option value='Gain Muscle'>Gain Muscle</option>
-                <option value='Increase Fitness'>Increase Fitness</option>
+                <option value='Build Muscle'>Build Muscle</option>
               </select>
             </div>
           </div>

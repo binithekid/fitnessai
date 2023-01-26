@@ -2,10 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&display=swap");
 
 body {
-  overflow: hidden;
   padding: 0;
   margin: 0;
   font-family: "Barlow", sans-serif;
+  overflow-x: hidden;
+  background: radial-gradient(at left top, rgb(241, 245, 249), white, white);
+}
+
+.App {
+  overflow: hidden;
 }
 
 .form {
@@ -31,11 +36,179 @@ body {
 /* Get stated page styling */
 
 .GetStarted {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GetStartedHero {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
+  width: 100%;
+}
+
+.GetStartedInfo {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  gap: 100px;
+}
+
+.GetStartedContact {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  gap: 100px;
+}
+
+.GetStartedContactRight {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 40px;
+}
+
+.GetStartedContactLeft {
+  width: 30%;
+  display: flex;
+  gap: 30px;
+}
+
+.GetStartedRight {
+  width: 50%;
+  display: flex;
+  gap: 30px;
+}
+
+.GetStartedLeft {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.imageGridLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+.imageGridRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 150px;
+}
+
+.RightSideImage {
+  width: 250px;
+}
+
+.GetStartedPara {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.GetStartedSubHeader {
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 40px;
+}
+
+.MealCard {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  background-color: white;
+}
+
+/* Mid Section Homepage */
+
+.GetStartedMidSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.MealContainer {
+  width: 80%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: white;
+  margin-top: 30px;
+}
+
+.PlanContainer {
+  width: 25%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.PlanContainer:hover > .PlanHeader {
+  color: #00a86b;
+}
+
+.Icon {
+  color: #00a86b;
+}
+
+.IconContainer {
+  padding: 10px;
+  background-color: rgb(241, 245, 249);
+  width: fit-content;
+  border-radius: 50px;
+  padding: 15px;
+}
+
+.PlanHeader {
+  margin: 0;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.PlanDescription {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.5;
+  color: gray;
+  font-size: 14px;
+}
+
+/* Titles */
+
+.HeroTitle {
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+  font-size: 100px;
+  padding: 0;
 }
 
 h1 {
@@ -51,7 +224,7 @@ h1 {
 .getStartedText {
   font-family: "Barlow", sans-serif;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 /* NavBar */
@@ -70,8 +243,9 @@ h1 {
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   position: absolute;
   z-index: 10;
-  width: 100%;
   top: 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 .navbarItems {
@@ -84,8 +258,6 @@ h1 {
 .navabarItem {
   list-style: none;
 }
-
-/* Path */
 
 /* AgeGender */
 .ageInput {
@@ -119,15 +291,12 @@ h1 {
 
 .pageDesign {
   display: flex;
-}
-
-.topHalf {
-  margin-top: 20%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .leftSide {
   width: 60%;
-  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -135,9 +304,15 @@ h1 {
   align-items: center;
   justify-content: center;
   z-index: 100;
-
   justify-content: space-between;
   padding: 20px;
+}
+
+.topHalf {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 50px);
 }
 
 .buttonGroup {
@@ -151,20 +326,37 @@ h1 {
 
 .Button {
   padding: 10px 40px 10px 40px;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: 0.3s;
-  background-color: gray;
+  background: #00a86b;
   color: white;
   font-family: "Barlow", sans-serif;
-  font-weight: 200;
+  font-weight: 100;
 }
 
-.Button:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  opacity: 0.8;
+.Button {
+  padding: 10px 40px 10px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.3s;
+  background: #00a86b;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+}
+mealPlanButton .Button:hover {
+  opacity: 0.9;
+}
+
+.BackButton:hover {
+  opacity: 0.9;
 }
 
 .select-dropdown,
@@ -220,6 +412,13 @@ h1 {
   padding-right: 20px;
 }
 
+.paraTextNutrition {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  padding-right: 20px;
+}
+
 .ageGenderContainer {
   display: flex;
   gap: 50px;
@@ -244,6 +443,7 @@ h1 {
 .rightSide {
   height: 100vh;
   width: 40%;
+  overflow: none;
 }
 
 .rightSideImage {
@@ -257,14 +457,251 @@ h1 {
   background-size: cover;
 }
 
-.rightSideImage {
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
+.PlanListItem {
+  list-style: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right: 20px;
 }
-.rightSideImage:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.IntakeListItem {
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.nutrionalPreferencesForm {
+  display: flex;
+  gap: 13px;
+  flex-direction: column;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.checkbox-wrapper-2 .checkboxStyle {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+}
+
+.checkbox-wrapper-2 .checkboxStyle::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.checkbox-wrapper-2 .checkboxStyle,
+.checkbox-wrapper-2 .checkboxStyle::after {
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .checkboxStyle::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+  cursor: pointer;
+}
+
+.checkbox-wrapper-2 input[type="checkbox"] {
+  cursor: default;
+}
+
+.checkbox-wrapper-2 .checkboxStyle:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .checkboxStyle:checked {
+  background-color: #32de84;
+}
+
+.checkbox-wrapper-2 .checkboxStyle:checked::after {
+  background-color: #fff;
+  left: 13px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.checkbox-wrapper-2 .checkboxStyle:checked:hover {
+  background-color: #32de84;
+}
+
+.labelName {
+  position: relative;
+  margin-top: -10px;
+}
+
+.checkbox-wrapper-2 input[type="checkbox"] + label {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* margin-top: 10px; */
+}
+
+.mealPlanButton {
+  background-color: white;
+  padding: 10px;
+  height: 50px;
+  font-family: "Barlow", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+}
+
+.selectedMealPlanButton {
+  height: 50px;
+  padding: 10px;
+  font-family: "Barlow", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  background: #00a86b;
+  color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: 1px solid #696969;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(111, 111, 111, 0.5);
+  z-index: 9;
+}
+
+/* Footer */
+
+.Footer {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.FooterHeader {
+  margin-top: 10px;
+}
+
+.FooterSocial {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 10px;
+}
+
+.HRFooter {
+  margin-right: 20px;
+  border-top: 1px solid gray;
+  width: 96%;
+}
+
+.FooterText {
+  margin: 0;
+}
+
+.copyright {
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Contact Form */
+
+.ContactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.ContactInput {
+  width: 50%;
+  font-family: "Barlow", sans-serif;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 4px;
+  border: 1px #f5f5f5 solid;
+  border-radius: 5px;
+}
+
+.ContactTextArea {
+  font-family: "Barlow", sans-serif;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 4px;
+  border: 1px #f5f5f5 solid;
+  border-radius: 5px;
+}
+
+.FormButton {
+  padding: 10px 40px 10px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.3s;
+  background: #00a86b;
+  color: white;
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  width: 30%;
+}
+
+.FormButton:hover {
   opacity: 0.9;
+}
+
+.leafLogo {
+  color: #00a86b;
+  font-size: 19px;
+}
+
+.HeaderLogo {
+  color: #00a86b;
+  font-size: 4rem;
 }

@@ -4,6 +4,10 @@ import AgeGender from "./Steps/AgeGender";
 import Path from "./Steps/Path";
 import Confirmation from "./Steps/Confirmation";
 import GetStarted from "./Steps/GetStarted";
+import PersonalOverview from "./NutritionPlan/PersonalOverview";
+import NutritionOptions from "./NutritionPlan/NutritionOptions";
+import MealPlan from "./NutritionPlan/MealPlan";
+import MealPlanOutput from "./MealPlanOutput/MealPlanOutput";
 
 const UserInfo = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,6 +38,30 @@ const UserInfo = () => {
           currentPage={currentPage}
         />
       );
+
+    case 6:
+      return (
+        <PersonalOverview
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      );
+
+    case 7:
+      return (
+        <NutritionOptions
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      );
+
+    case 8:
+      return (
+        <MealPlan currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      );
+
+    case 9:
+      return <MealPlanOutput />;
 
     default:
       return null;

@@ -1,14 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
-import backgroundImage from "../../resources/backgroundone.jpeg";
+import backgroundImage from "../../resources/backgroundfour.jpeg";
 import { useSelector } from "react-redux";
 
 const Confirmation = ({ setCurrentPage, currentPage }: any) => {
-  // const dataCollectState = store.getState();
-
   const data: any = useSelector((state: any) => state.dataCollect);
 
   const handleClick = () => {
-    console.log(data);
+    setCurrentPage(currentPage + 1);
   };
 
   return (
@@ -26,32 +24,31 @@ const Confirmation = ({ setCurrentPage, currentPage }: any) => {
               Please take a moment to double-check that the personal data you
               have entered is correct. It is important that this information is
               accurate in order for us to tailor your fitness and diet plan to
-              your specific needs. Once you have verified that the data is
-              correct, you can proceed by hitting the submit button.
+              your specific needs.
             </p>
-            <p>
+            <li className='PlanListItem'>
               <span style={{ fontWeight: "600" }}>Age:</span> {data.age}
-            </p>
-            <p>
+            </li>
+            <li className='PlanListItem'>
               <span style={{ fontWeight: "600" }}>Gender:</span>{" "}
               {data.gender.charAt(0).toUpperCase() + data.gender.slice(1)}
-            </p>
-            <p>
+            </li>
+            <li className='PlanListItem'>
+              <span style={{ fontWeight: "600" }}>How Active:</span>{" "}
+              {data.howActive}
+            </li>
+            <li className='PlanListItem'>
+              <span style={{ fontWeight: "600" }}>Height:</span> {data.height}
+            </li>
+            <li className='PlanListItem'>
               <span style={{ fontWeight: "600" }}>Current Weight:</span>{" "}
               {data.currentWeight}
               {data.weightMeasurement}
-            </p>
-            {data.desiredWeight && (
-              <p>
-                <span style={{ fontWeight: "600" }}>Desired Weight:</span>{" "}
-                {data.desiredWeight}
-                {data.weightMeasurement}
-              </p>
-            )}
-            <p>
+            </li>
+            <li className='PlanListItem'>
               <span style={{ fontWeight: "600" }}>You want to:</span>{" "}
               {data.pathChoice}
-            </p>
+            </li>
           </div>
           <div className='buttonGroup'>
             <button
@@ -60,7 +57,7 @@ const Confirmation = ({ setCurrentPage, currentPage }: any) => {
               Back
             </button>
             <button className='Button' onClick={handleClick}>
-              Submit
+              Next
             </button>
           </div>
         </div>
