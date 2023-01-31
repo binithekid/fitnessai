@@ -223,139 +223,6 @@ body {
   font-size: 4rem;
 }
 
-/* Get started Mobile */
-
-@media (max-width: 450px) {
-  /* Mobile Home Page and NavBar */
-
-  .HeroTitle {
-    font-size: 50px;
-  }
-  .HeaderLogo {
-    font-size: 2rem;
-  }
-  .getStartedText {
-    font-size: 14px;
-    width: 90%;
-  }
-  .GetStartedInfo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .GetStartedPara {
-    padding-right: 30px;
-    width: 90%;
-  }
-  .GetStartedLeft {
-    width: 90%;
-    padding: 20px;
-  }
-  .GetStartedSubHeader {
-    margin-bottom: 3px;
-    font-size: 25px;
-  }
-  .GetStartedRight {
-    width: 90%;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    gap: 0px;
-  }
-  .imageGridLeft {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 10px;
-    width: 90%;
-  }
-  .imageGridRight {
-    display: none;
-  }
-
-  /* Mobile Footer */
-
-  .FooterText {
-    font-weight: 300;
-    text-align: left;
-    font-size: 12px;
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  .footercopyright {
-    font-weight: 300;
-    text-align: center;
-    font-size: 10px;
-  }
-
-  .FooterDiv {
-    width: 100%;
-    background-color: white;
-    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
-    padding: 20px 0px;
-  }
-}
-
-@media (max-width: 850px) {
-  /* Mobile Home Page and NavBar */
-
-  .GetStartedInfo {
-    flex-direction: column;
-  }
-  .GetStartedRight {
-    width: 100%;
-  }
-  .GetStartedLeft {
-    width: 100%;
-  }
-  .imageGridRight {
-    padding-top: 0px;
-  }
-  .imageGridLeft {
-    padding-top: 0px;
-  }
-  .GetStartedMidSection {
-    width: 90%;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-  .GetStartedMidSectionSubHeader {
-    margin-bottom: 1px;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-bottom: -20px;
-  }
-  .MealContainer {
-    width: 100%;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    background-color: white;
-  }
-  .PlanContainer {
-    width: 90%;
-  }
-}
-
-@media (max-width: 1100px) {
-  .rightSide {
-    display: none;
-  }
-  .leftSide {
-    width: 100% !important;
-    padding: 20px !important;
-  }
-}
-
 h1 {
   font-family: "Bebas Neue", cursive;
   margin: 0px;
@@ -414,6 +281,7 @@ h1 {
   width: 100px;
   font-family: "Barlow", sans-serif;
   border: 1px #f5f5f5 solid;
+  height: 33px;
 }
 
 .InputStyle {
@@ -439,6 +307,8 @@ h1 {
   display: flex;
   height: 100vh;
   overflow: hidden;
+  width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 .leftSide {
@@ -574,9 +444,14 @@ h1 {
 }
 
 .weightInputContainer {
-  margin-top: 50px;
   display: flex;
   gap: 30px;
+}
+
+.weightContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .weightInput {
@@ -587,6 +462,7 @@ h1 {
   width: 140px;
   font-family: "Barlow", sans-serif;
   border: 1px #f5f5f5 solid;
+  height: 33px;
 }
 
 .rightSide {
@@ -870,4 +746,161 @@ h1 {
 
 .navbarLogo:hover {
   opacity: 0.7;
+}
+
+/* Personal details page */
+.personalDetailsPage {
+  padding: 0px 20px;
+  height: 100vh;
+}
+
+/* -------------------------------------------------------------- MOBILE ------------------------------------------------------------ */
+
+@media (max-width: 450px) {
+  /* Mobile Home Page and NavBar */
+
+  .HeroTitle {
+    font-size: 50px;
+  }
+  .HeaderLogo {
+    font-size: 2rem;
+  }
+  .getStartedText {
+    font-size: 14px;
+    width: 90%;
+  }
+  .GetStartedInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .GetStartedPara {
+    padding-right: 30px;
+    width: 90%;
+  }
+  .GetStartedLeft {
+    width: 90%;
+    padding: 20px;
+  }
+  .GetStartedSubHeader {
+    margin-bottom: 3px;
+    font-size: 25px;
+  }
+  .GetStartedRight {
+    width: 90%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .imageGridLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    width: 90%;
+  }
+  .imageGridRight {
+    display: none;
+  }
+
+  /* Mobile Footer */
+
+  .FooterText {
+    font-weight: 300;
+    text-align: left;
+    font-size: 12px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .footercopyright {
+    font-weight: 300;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .FooterDiv {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    padding: 20px 0px;
+  }
+  .ageGenderContainer {
+    display: flex;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  /* Mobile Home Page and NavBar */
+
+  .GetStartedInfo {
+    flex-direction: column;
+  }
+  .GetStartedRight {
+    width: 100%;
+  }
+  .GetStartedLeft {
+    width: 100%;
+  }
+  .imageGridRight {
+    padding-top: 0px;
+  }
+  .imageGridLeft {
+    padding-top: 0px;
+  }
+  .GetStartedMidSection {
+    width: 90%;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  .GetStartedMidSectionSubHeader {
+    margin-bottom: 1px;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+  }
+  .MealContainer {
+    width: 100%;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: white;
+  }
+  .PlanContainer {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .rightSide {
+    display: none;
+  }
+  .leftSide {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .ageGenderContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .weightInputContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .paraText {
+    font-size: 14px;
+  }
 }

@@ -64,19 +64,21 @@ const Weight = ({ setCurrentPage, currentPage }: any) => {
               weight or height just put a reasonable estimate!
             </p>
             <div className='weightInputContainer'>
-              <input
-                className='weightInput'
-                type='number'
-                placeholder='Current Weight'
-                value={currentWeight}
-                onChange={(e) => setCurrentWeight(e.target.value)}></input>
-              <div className='select-dropdown' style={{ width: "4rem" }}>
-                <select
-                  value={measurement}
-                  onChange={(e) => setMeasurement(e.target.value)}>
-                  <option value='kg'>kg</option>
-                  <option value='lbs'>lbs</option>
-                </select>
+              <div className='weightContainer'>
+                <input
+                  className='weightInput'
+                  type='number'
+                  placeholder='Current Weight'
+                  value={currentWeight}
+                  onChange={(e) => setCurrentWeight(e.target.value)}></input>
+                <div className='select-dropdown' style={{ width: "4rem" }}>
+                  <select
+                    value={measurement}
+                    onChange={(e) => setMeasurement(e.target.value)}>
+                    <option value='kg'>kg</option>
+                    <option value='lbs'>lbs</option>
+                  </select>
+                </div>
               </div>
               <div className='select-dropdown' style={{ width: "6rem" }}>
                 <select value={height} onChange={handleHeight}>

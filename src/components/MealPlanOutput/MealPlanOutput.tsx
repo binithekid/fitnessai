@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "./MealPlanOutput.css";
 import { AnimatePresence, motion } from "framer-motion";
-import background from "../../resources/backgroundone.jpeg";
+import background from "../../resources/backgroundeight.jpeg";
 
 const MealPlanOutput = () => {
   const data = useSelector((state: any) => state.dataCollect);
@@ -73,9 +73,15 @@ const MealPlanOutput = () => {
   return (
     <AnimatePresence>
       {isLoading ? (
-        <div className='LoadingContainer'>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className='LoadingContainer'>
+          <div className='loader'></div>
           <p>Your meal plan is loading! This will only take a minute</p>
-        </div>
+        </motion.div>
       ) : (
         <motion.div
           initial={{ opacity: 0 }}
@@ -99,7 +105,7 @@ const MealPlanOutput = () => {
                 If so, simply enter your email below and it'll be sent to you in
                 an instant!
               </p>
-              <form onSubmit={handleEmailSubmit}>
+              <form className='emailForm' onSubmit={handleEmailSubmit}>
                 <input
                   className='emailInput'
                   type='email'

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import backgroundImage from "../../resources/backgroundfive.jpeg";
+import backgroundImage from "../../resources/backgroundseven.jpeg";
 import { useSelector, useDispatch } from "react-redux";
 import SingleOption from "../MealPlanOptions/SingleOption";
 import DailyOption from "../MealPlanOptions/DailyOption";

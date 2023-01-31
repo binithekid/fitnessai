@@ -144,9 +144,9 @@ const PersonalOverview = ({ currentPage, setCurrentPage }: any) => {
                 <p className='paraText'>
                   Losing weight requires creating a <b>calorie deficit</b>. To
                   achieve this, you must consume fewer calories than your body
-                  burns in a day. The amount of calories you burn in a day is
-                  known as your total daily energy expenditure (TDEE). Based on
-                  the information provided, your TDEE has been calculated to be{" "}
+                  burns. The amount of calories you burn in a day is known as
+                  your total daily energy expenditure (TDEE). Based on the
+                  information provided, your TDEE has been calculated to be{" "}
                   <b>{TDEE}</b>. This calculation is based on factors such as
                   your age, sex, weight, height, and activity level. To lose
                   weight, you must consume fewer calories than your TDEE. A safe

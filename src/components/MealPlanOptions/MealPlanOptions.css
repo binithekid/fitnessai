@@ -11,3 +11,9 @@
   font-weight: 300;
   margin-top: 20px;
 }
+
+@media (max-width: 600px) {
+  .selectPlan {
+    font-size: 14px;
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import backgroundImage from "../../resources/backgroundfour.jpeg";
+import backgroundImage from "../../resources/backgroundsix.jpeg";
 import { setSelectedPlan } from "../../features/slice";
 import { useDispatch } from "react-redux";
 import "../../App.css";
