@@ -1,11 +1,17 @@
 import { FaTwitter, FaInstagram, FaLeaf } from "react-icons/fa";
 
 const Header = () => {
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   return (
     <nav className='navbar'>
-      <h1>
-        <FaLeaf className='leafLogo' /> GETFIT.AI
-      </h1>
+      <div className='navbarLogo' onClick={refreshPage}>
+        <h1>
+          <FaLeaf className='leafLogo' /> NUTRIPLAN
+        </h1>
+      </div>
       <div className='navbarItems'>
         <li className='navabarItem'>
           <FaTwitter className='Icon' />

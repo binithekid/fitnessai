@@ -1,17 +1,19 @@
-import { FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaLeaf } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='Footer'>
-      <h1 className='FooterHeader'>FITNESS.AI</h1>
+    <div className='FooterDiv'>
+      <h1 className='FooterLogo'>
+        <FaLeaf className='footerLeafLogo' /> NUTRIPLAN
+      </h1>
       <p className='FooterText'>
-        The only tool you'll need to get in the best shape of your life!
+        Discover delicious and nutritious meal plans tailored to your needs!
       </p>
       <div className='FooterSocial'>
         <FaTwitter className='Icon' />
         <FaInstagram className='Icon' />
       </div>
-      <p className='copyright'>Copyright © 2022 Fitness AI</p>
+      <p className='footercopyright'>Copyright © 2022 Nutriplan.ai</p>
     </div>
   );
 };

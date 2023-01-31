@@ -3,7 +3,6 @@ import backgroundImage from "../../resources/backgroundfive.jpeg";
 import { useSelector, useDispatch } from "react-redux";
 import SingleOption from "../MealPlanOptions/SingleOption";
 import DailyOption from "../MealPlanOptions/DailyOption";
-import WeeklyOption from "../MealPlanOptions/WeeklyOption";
 import { useState } from "react";
 import {
   setSelectedCuisine,
@@ -67,14 +66,6 @@ const MealPlan = ({ setCurrentPage, currentPage }: any) => {
               )}
               {data.selectedPlan === "Daily" && (
                 <DailyOption
-                  dietaryRestrictions={dietaryRestrictions}
-                  setDietaryRestrictions={setDietaryRestrictions}
-                  other={other}
-                  setOther={setOther}
-                />
-              )}
-              {data.selectedPlan === "Weekly" && (
-                <WeeklyOption
                   dietaryRestrictions={dietaryRestrictions}
                   setDietaryRestrictions={setDietaryRestrictions}
                   other={other}

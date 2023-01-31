@@ -28,14 +28,12 @@ const NutritionOptions = ({ setCurrentPage, currentPage }: any) => {
             <h1 style={{ marginTop: "40px" }}>OPTIONS FOR YOU</h1>
             <p className='paraText'>
               We offer meal plan options to suit your individual needs and
-              goals. The <b>Single Meal Plan </b>is for when you aren't sure
-              what meal to eat at any given time. The <b>Daily Meal Plan</b>{" "}
-              provides a detailed breakdown of what to eat for the day, while
-              the <b>Weekly Meal Plan</b> give you a bird's-eye view of your
-              meals for the week ahead. Our options are tailored to your
-              personal needs, such as your dietary preferences, allergies, and
-              fitness level, to ensure that you're getting the optimal balance
-              of nutrients for your body
+              goals. The Single Meal Plan is for when you aren't sure what meal
+              to eat at any given time while the Daily Meal Plan provides a
+              detailed breakdown of what to eat for the day. Our options are
+              tailored to your personal needs, such as your dietary preferences,
+              allergies, and fitness level, to ensure that you're getting the
+              optimal balance of nutrients for your body
             </p>
             <div className='buttonList'>
               <button
@@ -55,15 +53,6 @@ const NutritionOptions = ({ setCurrentPage, currentPage }: any) => {
                     : "mealPlanButton "
                 }>
                 Daily Meal Plan
-              </button>
-              <button
-                onClick={() => setSelectedMealPlan("Weekly")}
-                className={
-                  selectedMealPlan === "Weekly"
-                    ? "selectedMealPlanButton"
-                    : "mealPlanButton "
-                }>
-                Weekly Meal Plan
               </button>
             </div>
           </div>

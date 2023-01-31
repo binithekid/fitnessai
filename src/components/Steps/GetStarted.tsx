@@ -23,10 +23,10 @@ const GetStarted = ({ currentPage, setCurrentPage }: any) => {
         <div className='GetStartedHero'>
           <p className='getStartedText'>Welcome to</p>
           <h1 className='HeroTitle'>
-            <FaLeaf className='HeaderLogo' /> GetFit.ai
+            <FaLeaf className='HeaderLogo' /> NUTRIPLAN
           </h1>
           <p className='getStartedText'>
-            The only tool you'll need to get in the best shape of your life!
+            Discover delicious and nutritious meal plans tailored to your needs!
           </p>
           <button
             className='Button'
@@ -39,15 +39,15 @@ const GetStarted = ({ currentPage, setCurrentPage }: any) => {
           <div className='GetStartedLeft'>
             <h2 className='GetStartedSubHeader'>Eat Right, Feel Right!</h2>
             <p className='GetStartedPara'>
-              It seems like the code you've provided is not properly handling
-              the response from the API endpoint. The response from the endpoint
-              is most likely a string containing multiple lines of text and
-              bullet points, but it is being treated as a single string. Instead
-              of sending the entire response text as a single string, you can
-              try formatting the response text into an array of strings, where
-              each string represents a line or bullet point. This way, you can
-              easily loop through the array of strings to display each line or
-              bullet point separately in your frontend component.
+              Unleash your inner chef and reach your health goals! Say goodbye
+              to boring salads and bland chicken breasts. With just a few taps,
+              our app creates a custom meal plan based on your personal details,
+              such as height, weight, age, and activity level. Whether you're
+              looking to lose weight, build muscle, or just want to eat
+              healthier, our app has got you covered. And the best part? You can
+              email your delicious plan to yourself and enjoy it anytime,
+              anywhere. So, get ready to tantalize your taste buds and achieve
+              your health goals like a boss!
             </p>
             <button className='Button' onClick={handleClick}>
               Get Started
@@ -73,7 +73,7 @@ const GetStarted = ({ currentPage, setCurrentPage }: any) => {
           </div>
         </div>
         <div className='GetStartedMidSection'>
-          <h2 className='GetStartedSubHeader'>How it works</h2>
+          <h2 className='GetStartedMidSectionSubHeader'>How it works</h2>
           <div className='MealContainer'>
             <div className='PlanContainer'>
               <div className='IconContainer'>
@@ -81,62 +81,45 @@ const GetStarted = ({ currentPage, setCurrentPage }: any) => {
               </div>
               <p className='PlanHeader'>Plans to suit your personal needs</p>
               <p className='PlanDescription'>
-                It seems like the code you've provided is not properly handling
-                the response from the API endpoint. The response from the
-                endpoint is most likely a string containing multiple lines of
-                text and bullet points,
+                Nutriplan takes into account your height, weight, age, and
+                activity level to create a customized meal plan that fits like a
+                glove. Whether you're looking to lose weight, bulk up, or just
+                eat healthier, our app creates a meal plan that's tailored just
+                for you. You can save and access your plan anywhere, anytime by
+                simply emailing it to yourself once the plan has been completed.
               </p>
             </div>
             <div className='PlanContainer'>
               <div className='IconContainer'>
                 <FaSeedling className='Icon' />
               </div>
-              <p className='PlanHeader'>Range of meal plan durations</p>
+              <p className='PlanHeader'>Vegan? We've got you covered</p>
               <p className='PlanDescription'>
-                It seems like the code you've provided is not properly handling
-                the response from the API endpoint. The response from the
-                endpoint is most likely a string containing multiple lines of
-                text and bullet points,
+                Nutriplan takes into account your dietary restrictions,
+                preferences, and lifestyle choices to create a meal plan that's
+                perfect for you while also allowing you to choose from a variety
+                of cuisines! You can create a single meal plan for breakfast,
+                lunch, or dinner, or a daily meal plan that incorporates all
+                three, along with easy-to-follow cooking instructions, you'll be
+                able to enjoy a tasty and healthy meal in no time!
               </p>
             </div>
             <div className='PlanContainer'>
               <div className='IconContainer'>
                 <FaCog className='Icon' />
               </div>
-              <p className='PlanHeader'>Done using the latest AI technology</p>
+              <p className='PlanHeader'>Powered by the latest AI technology</p>
               <p className='PlanDescription'>
-                It seems like the code you've provided is not properly handling
-                the response from the API endpoint. The response from the
-                endpoint is most likely a string containing multiple lines of
-                text and bullet points,
+                NutriPlan is powered by OpenAI's latest AI technology to create
+                a customized meal plan for you in a matter of seconds, taking
+                into account your personal details, dietary restrictions, and
+                cuisine preferences. Our cutting-edge AI technology generates
+                your plan in a clear and concise manner, so you can easily
+                follow and enjoy your delicious and nutritious meals.
               </p>
             </div>
           </div>
         </div>
-        {/* <div className='GetStartedContact'>
-          <div className='GetStartedContactLeft'></div>
-          <div className='GetStartedContactRight'>
-            <h2 className='GetStartedSubHeader'>Contact us!</h2>
-            <p className='GetStartedPara'>
-              It seems like the code you've provided is not properly handling
-              the response from the API endpoint. The response from the endpoint
-              is most likely a string containing multiple lines of text element.
-              But be careful as it may cause security issues.
-            </p>
-            <form className='ContactForm'>
-              <input placeholder='Enter Name' className='ContactInput' />
-              <input placeholder='Enter Email' className='ContactInput' />
-              <textarea
-                placeholder='Enter your message'
-                className='ContactTextArea'
-                rows={7}
-              />
-              <button className='FormButton' onClick={handleClick}>
-                Submit
-              </button>
-            </form>
-          </div>
-        </div> */}
       </motion.div>
       <Footer />
     </AnimatePresence>
