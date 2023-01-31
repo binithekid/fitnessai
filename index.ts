@@ -110,8 +110,6 @@ app.post("/emailSubmit", async (req, res) => {
   try {
     const { data, email } = req.body;
 
-    console.log(email);
-
     var arrayItems = "";
     var n;
     for (n in data) {
