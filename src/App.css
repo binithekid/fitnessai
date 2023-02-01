@@ -835,6 +835,10 @@ h1 {
     display: flex;
     gap: 50px;
   }
+
+  .leftSide {
+    height: 100%;
+  }
 }
 
 @media (max-width: 850px) {
@@ -888,7 +892,6 @@ h1 {
   .leftSide {
     width: 100% !important;
     padding: 20px !important;
-    height: calc(100vh - 50px);
   }
 }
 
