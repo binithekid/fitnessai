@@ -38,7 +38,7 @@ const MealPlanOutput = () => {
       fruitAndVeg: data.fruitAndVeg,
     };
 
-    fetch(`${backend}/createMealPlan`, {
+    fetch("/createMealPlan", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const MealPlanOutput = () => {
       email: emailAddress,
     };
 
-    fetch(`${backend}/emailSubmit`, {
+    fetch("/emailSubmit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
