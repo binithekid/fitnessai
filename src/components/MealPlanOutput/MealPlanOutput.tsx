@@ -13,6 +13,10 @@ const MealPlanOutput = () => {
 
   const port = process.env.REACT_APP_PORT;
 
+  const backend = process.env.BACKEND_URL;
+
+  console.log(backend);
+
   const refreshPage = () => {
     window.location.reload();
   };
@@ -34,7 +38,7 @@ const MealPlanOutput = () => {
       fruitAndVeg: data.fruitAndVeg,
     };
 
-    fetch("https://nutritionai.vercel.app/createMealPlan", {
+    fetch(`${backend}/createMealPlan`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +50,7 @@ const MealPlanOutput = () => {
         setBulletPoints(response.message.split("\n"));
         setIsLoading(false);
       });
-  }, [data, port]);
+  }, [data, port, backend]);
 
   const handleEmailSubmit = async (e: any) => {
     e.preventDefault();
@@ -55,7 +59,7 @@ const MealPlanOutput = () => {
       email: emailAddress,
     };
 
-    fetch("https://nutritionai.vercel.app/emailSubmit", {
+    fetch(`${backend}/emailSubmit`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
