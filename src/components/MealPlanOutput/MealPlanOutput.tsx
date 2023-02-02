@@ -34,7 +34,7 @@ const MealPlanOutput = () => {
       fruitAndVeg: data.fruitAndVeg,
     };
 
-    fetch(`http://localhost:${port}/createMealPlan`, {
+    fetch("https://nutritionai.vercel.app/createMealPlan", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const MealPlanOutput = () => {
       email: emailAddress,
     };
 
-    fetch(`http://localhost:${port}/emailSubmit`, {
+    fetch("https://nutritionai.vercel.app/emailSubmit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
